@@ -1,3 +1,7 @@
+package model;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Usuario {
     private String nome;
     private double peso;
@@ -8,11 +12,13 @@ public class Usuario {
     private double protConsumida = 0;
     private double carboConsumido = 0;
     private double gorduraConsumida = 0;
+    private List<Refeicao> historicoRefeicoes;
 
     public Usuario (String nome, double peso, double altura) {
         this.nome = nome;
         this.peso = peso;
         this.altura = altura;
+        this.historicoRefeicoes = new ArrayList<>();
     }
     public String getNome(){
         return this.nome;
@@ -116,6 +122,7 @@ public class Usuario {
         this.protConsumida += refeicao.getProt();
         this.carboConsumido += refeicao.getCarbo();
         this.gorduraConsumida += refeicao.getGordura();
+        this.historicoRefeicoes.add(refeicao);
     }
     public double getRestanteProteina() {
         return this.metaProteina - this.protConsumida;

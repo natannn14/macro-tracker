@@ -1,3 +1,7 @@
+package main;
+import model.Usuario;
+import model.Refeicao;
+
 import javax.swing.JOptionPane;
 
 public class ContadorProteina {
